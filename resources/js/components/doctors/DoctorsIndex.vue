@@ -1,4 +1,9 @@
 <template>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Doctores
+        </h2>
+    </x-slot><br>
     <div class="overflow-hidden overflow-x-auto min-w-full align-middle sm:rounded-md">
         <div class="flex place-content-end mb-4">
             <div >
