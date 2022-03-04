@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Patient;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
-use App\Http\Resources\PatientResource;
-use App\Http\Requests\PatientRequest;
-use App\Exports\PatientsExport;
+use App\Http\Resources\DoctorResource;
+use App\Http\Requests\DoctorRequest;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DoctorsExport;
 
-class PatientController extends Controller
+class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        return PatientResource::collection(Patient::all());
+        return DoctorResource::collection(Doctor::all());
     }
 
     /**
@@ -29,53 +29,53 @@ class PatientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PatientRequest $request)
+    public function store(DoctorRequest $request)
     {
-        $patient = Patient::create($request->validated());
+        $doctor = Doctor::create($request->validated());
 
-        return new PatientResource($patient);
+        return new DoctorResource($doctor);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Patient  $patient
+     * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function show(Patient $patient)
+    public function show(Doctor $doctor)
     {
-        return new PatientResource($patient);
+        return new DoctorResource($doctor);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Patient  $patient
+     * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function update(PatientRequest $request, Patient $patient)
+    public function update(DoctorRequest $request, Doctor $doctor)
     {
-        $patient->update($request->validated());
+        $doctor->update($request->validated());
 
-        return new PatientResource($patient);
+        return new DoctorResource($doctor);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Patient  $patient
+     * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patient $patient)
+    public function destroy(Doctor $doctor)
     {
-        $patient->delete();
+        $doctor->delete();
 
         return response()->noContent();
     }
 
     public function export() 
     {
-        return Excel::download(new PatientsExport, 'pacientes.xlsx');
+        return Excel::download(new DoctorsExport, 'doctores.xlsx');
     }
 }
