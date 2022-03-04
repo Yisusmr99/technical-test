@@ -31,8 +31,8 @@ class DoctorRequest extends FormRequest
             'age'           => ['required'],
             'gender'        => ['required'],
             'clinic'        => ['required', 'string'],
-            'specialty_id'  => ['required'],
-            'schedule'      => ['required', 'integer'],
+            'specialty_id'  => ['required', 'integer'],
+            'schedule'      => ['required', 'string'],
         ];
     }
 }

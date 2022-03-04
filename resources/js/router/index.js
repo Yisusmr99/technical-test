@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import PatientsIndex from '../components/patients/PatientsIndex';
-import PatientsCreate from '../components/patients/PatientsCreate';
-import PatientsEdit from '../components/patients/PatientsEdit';
+import PatientsIndex    from '../components/patients/PatientsIndex';
+import PatientsCreate   from '../components/patients/PatientsCreate';
+import PatientsEdit     from '../components/patients/PatientsEdit';
+
+import DoctorsIndex     from '../components/doctors/DoctorsIndex';
+import DoctorsCreate    from '../components/doctors/DoctorsCreate';
+import DoctorsEdit      from '../components/doctors/DoctorsEdit';
 
 const routes = [
     {
@@ -19,6 +23,22 @@ const routes = [
         path: '/patients/:id/edit',
         name: 'patients.edit',
         component: PatientsEdit,
+        props: true
+    },
+    {
+        path: '/doctors',
+        name: 'doctors.index',
+        component: DoctorsIndex
+    },
+    {
+        path: '/doctors/create',
+        name: 'doctors.create',
+        component: DoctorsCreate
+    },
+    {
+        path: '/doctors/:id/edit',
+        name: 'doctors.edit',
+        component: DoctorsEdit,
         props: true
     }
 ]
