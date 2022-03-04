@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Resources\PatientResource;
 use App\Http\Requests\PatientRequest;
+use App\Exports\PatientsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PatientController extends Controller
 {
@@ -70,5 +72,12 @@ class PatientController extends Controller
         $patient->delete();
 
         return response()->noContent();
+    }
+
+    public function export() 
+    {
+        // return (new PatientsExport())->downloand('pacientes.xlsx');
+        
+        return Excel::download(new PatientsExport, 'pacientes.xlsx');
     }
 }
