@@ -8,7 +8,14 @@ import DoctorsIndex     from '../components/doctors/DoctorsIndex';
 import DoctorsCreate    from '../components/doctors/DoctorsCreate';
 import DoctorsEdit      from '../components/doctors/DoctorsEdit';
 
+import DashboardIndex   from '../components/dashboard/dashboard';
+
 const routes = [
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: DashboardIndex
+    },
     {
         path: '/patients',
         name: 'patients.index',
