@@ -701,11 +701,11 @@ select {
 .h-10 {
   height: 2.5rem;
 }
-.h-4 {
-  height: 1rem;
-}
 .h-6 {
   height: 1.5rem;
+}
+.h-4 {
+  height: 1rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -725,14 +725,14 @@ select {
 .w-full {
   width: 100%;
 }
-.w-4 {
-  width: 1rem;
-}
 .w-6 {
   width: 1.5rem;
 }
 .w-48 {
   width: 12rem;
+}
+.w-4 {
+  width: 1rem;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -919,13 +919,13 @@ select {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -976,10 +976,6 @@ select {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
 .font-medium {
   font-weight: 500;
 }
@@ -994,9 +990,6 @@ select {
 }
 .leading-7 {
   line-height: 1.75rem;
-}
-.leading-tight {
-  line-height: 1.25;
 }
 .tracking-wider {
   letter-spacing: 0.05em;
@@ -1210,13 +1203,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
-.focus\:text-gray-700:focus {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
-}
 .focus\:text-gray-500:focus {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.focus\:text-gray-700:focus {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
