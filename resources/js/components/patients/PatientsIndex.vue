@@ -1,9 +1,7 @@
 <template>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Pacientes
-        </h2>
-    </x-slot><br>
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        Pacientes
+    </h2><br>
     <div class="overflow-hidden overflow-x-auto min-w-full align-middle sm:rounded-md">
         <div class="flex place-content-end mb-4">
             <div >

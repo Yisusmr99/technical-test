@@ -78,4 +78,21 @@ class PatientController extends Controller
     {
         return Excel::download(new PatientsExport, 'pacientes.xlsx');
     }
+
+    public function getData(){
+
+        $ultimo_patient = Patient::latest('id')->first();
+        $name = $ultimo_patient->name.' '.$ultimo_patient->last_name;
+        $patients = new \stdClass();
+        $patients->total_patient = Patient::all()->count();
+        $patients->name = $name;
+
+        $array = [
+            $patients
+        ];
+
+        return response()->json([
+            'data'      => $array
+        ]);
+    }
 }
