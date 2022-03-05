@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
-use App\Models\Patient;
 use Illuminate\Http\Request;
 
 use App\Http\Resources\DoctorResource;
@@ -78,28 +77,5 @@ class DoctorController extends Controller
     public function export() 
     {
         return Excel::download(new DoctorsExport, 'doctores.xlsx');
-    }
-
-    public function getData(){
-        
-        $ultimo_doctor = Doctor::latest('id')->first();
-        $name_doctor = $ultimo_doctor->name.' '.$ultimo_doctor->last_name;
-
-        $ultimo_patient = Patient::latest('id')->first();
-        $name_patient = $ultimo_patient->name.' '.$ultimo_patient->last_name;
-
-        $data = new \stdClass();
-        $data->total_doctor = Doctor::all()->count();
-        $data->total_patient = Patient::all()->count();
-        $data->name_doctor = $name_doctor;
-        $data->name_patient = $name_patient;
-
-        $array = [
-            $data
-        ];
-
-        return response()->json([
-            'data'      => $array
-        ]);
     }
 }

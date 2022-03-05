@@ -19,9 +19,6 @@ use App\Http\Controllers\Api\DoctorController;
 Route::get('/patients/export',   [PatientController::class, 'export']);
 Route::get('/doctors/export',   [DoctorController::class, 'export']);
 
-Route::get('/get/data/doctors',         [DoctorController::class, 'getData']);
-Route::get('/get/data/patients',        [PatientController::class, 'getData']);
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

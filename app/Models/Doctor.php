@@ -17,7 +17,6 @@ class Doctor extends Model
         'age',
         'gender',
         'clinic',
-        'specialty_id',
         'schedule'
     ];
 }
